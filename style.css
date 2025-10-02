@@ -249,6 +249,9 @@ footer {
         width: 120px;
         flex-shrink: 0;
     }
+    .contact img{
+        width: 10%;
+    }
 }
 
 

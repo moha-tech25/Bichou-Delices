@@ -1,176 +1,250 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bichou Délices - Restaurant Nordiste</title>
-    <meta name="description" content="Bichou Délices propose des plats traditionnels nordistes : Toubani, bouillie de mil, couscous africain, atassi, igname pilé et bien plus.">
-    <meta name="google-site-verification" content="Z9kIprLSyw2jt2kHjJkHcz-Jmh3-6aua6R38lPWUYsQ" />
-    <link rel="stylesheet" href="style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bichou Délices - Restaurant Nordiste</title>
+        <meta name="description" content="Bichou Délices propose des plats traditionnels nordistes : Toubani, bouillie de mil, couscous africain, atassi, igname pilé et bien plus.">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Bichou Délices" width="20%">
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#a-propos">À propos</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#produits">Produits</a></li>
+                    <li><a href="#mets-sur-commande">Mets sur commande</a></li>
+                    <li><a href="#galerie">Galerie</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">☰</div>
+        </header>
 
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="Logo Bichou Délices" width="20%">
-        </div>
-        <nav>
-            <ul class="nav">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#a_propos">À propos</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#galerie">Galerie</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-         <div class="hamburger">
-            ☰
-        </div>
-    </header>
-    <main>
-        <section id="accueil" class="accueil">
-            <div class="div1">
-                <h1>Bienvenue au Restaurant <br> Bichou Délices</h1>
+        <main>
+            <!-- Accueil -->
+            <section id="accueil" class="accueil">
+                <div class="div1">
+                    <h1>Bienvenue au Restaurant <br> Bichou Délices</h1>
+                    <p>Bichou Délices vous propose des plats nordistes, l'adresse incontournable pour savourer l'authenticité des recettes du Nord. Chaque plat est préparé avec soin pour offrir une expérience gourmande et inoubliable.</p>
+                    <a href="#menu" class="btn1">Voir le menu</a>
+                </div>
+            </section>
+
+            <!-- À propos -->
+            <section id="a-propos" class="a_propos">
+                <h2>À propos de Bichou Délices</h2>
+                <p>Chez Bichou, la cuisine est plus qu'un repas : c'est une histoire, un héritage et une émotion partagée.</p>
+                <p>Originaire du Nord, Bichou met à l'honneur les saveurs authentiques avec une touche de modernité pour plaire à tous les gourmets. Afin de préserver l'authenticité des recettes nordistes, nous utilisons uniquement des ingrédients frais, naturels et locaux.</p>
+                <p>Chez Bichou Délices, chaque client est invité à vivre une expérience culinaire unique faite de découvertes et de souvenirs. Avec son équipe et son service de livraison, Bichou vous offre un véritable voyage gustatif au cœur du Nord.</p>
+            </section>
+
+            <!-- Menu -->
+            <section id="menu" class="menu">
+                <h2>Nos Menus</h2>
+                <ul>
+                    <li>
+                        <div>
+                            <h3>Lundi</h3>
+                            <img src="images/touba1.jpg" alt="Plat traditionnel Toubani" loading="lazy">
+                            <h4>Toubani</h4>
+                            <p>Le Toubani est un plat traditionnel du Nord à base de farine d'haricots, préparé et cuit à la vapeur. Moelleux et généreux, il se savoure avec de l'huile, des oignons et du piment en poudre. Riche en protéines, fibres et vitamines, c'est un plat sain et nourrissant.</p>
+                            <strong>L'unité à 250fr</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Mardi</h3>
+                            <img src="images/wa1.jpg" alt="Couscous africain Wassa Wassa" loading="lazy">
+                            <h4>Couscous africain (Wassa Wassa)</h4>
+                            <p>Préparé à base de cossettes d'igname, ce couscous léger et savoureux est cuit à la vapeur. Il s'accompagne d'huile de palme, de friture, de poisson, d'œuf ou de fromage. Énergétique et appétissant, il se consomme aussi bien au petit-déjeuner qu'au déjeuner.</p>
+                            <strong>1000fr / 1500fr / 2000fr</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Mercredi</h3>
+                            <img src="images/ata1.jpg" alt="Plat traditionnel Atassi" loading="lazy">
+                            <h4>Atassi (Watché)</h4>
+                            <p>Mélange de riz et d'haricots cuits ensemble, l'Atassi est généralement servi avec friture, piment noir, œuf, fromage, poisson ou viande. Chez Bichou, il est également proposé avec du spaghetti ou du gari. C'est un plat équilibré, nourrissant et polyvalent.</p>
+                            <strong>1000fr / 1500fr / 2000fr</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Jeudi</h3>
+                            <img src="images/wa2.jpg" alt="Couscous africain du jeudi" loading="lazy">
+                            <h4>Couscous africain</h4>
+                            <p>Un classique du Nord, toujours apprécié et savoureux.</p>
+                            <strong>1000fr / 1500fr / 2000fr</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Vendredi</h3>
+                            <img src="images/pil1.jpg" alt="Plat d'igname pilé" loading="lazy">
+                            <h4>Igname pilé</h4>
+                            <p>Préparé en pilant de l'igname bouilli jusqu'à obtenir une pâte lisse et élastique, l'igname pilé se déguste en boulettes accompagnées de sauces variées. Un incontournable du Nord.</p>
+                            <strong>3000fr</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>Samedi</h3>
+                            <img src="images/wa3.jpg" alt="Couscous africain du samedi" loading="lazy">
+                            <h4>Couscous africain</h4>
+                            <p>Une spécialité toujours au rendez-vous pour clôturer la semaine.</p>
+                            <strong>1000fr / 1500fr / 2000fr</strong>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Produits -->
+            <section id="produits">
+                <h2>Nos Produits Disponibles</h2>
+                <ul class="produits-list">
+                    <li>
+                        <img src="images/precuit.jpg" alt="Wassa Wassa précuit" loading="lazy" >
+                        <h3>Wassa Wassa Précuit</h3>
+                        <p>Savourez le goût authentique du Wassa Wassa, déjà précuit prêt à préparer chez vous en quelques minutes.</p>
+                    </li>
+                    <li>
+                        <img src="images/farine.jpg" alt="Farine de bouillie de mil" loading="lazy" >
+                        <h3>Farine de bouillie de mil</h3>
+                        <p>De la farine de mil de qualité, idéale pour préparer une bouillie nutritive et délicieuse à la maison.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Mets sur commande -->
+            <section id="mets-sur-commande">
+                <h2>Mets Disponibles sur commande</h2>
+                <p>Chez Bichou Délices, nous vous accompagnons lors de vos moments spéciaux. Pour vos cérémonies, baptêmes, réunions de famille, anniversaires ou tout autre événement, nous préparons avec soin une variété de mets savoureux, disponibles uniquement sur commande, qu'il s'agisse de plats traditionnels du Nord ou de recettes personnalisées selon vos envies.</p>
+                
+                <h3>Plats</h3>
+                <ul class="commande-list">
+                    <li>
+                        <img src="images/gras.jpg" alt="Riz au gras" loading="lazy">
+                        <h4>Riz au gras</h4>
+                        <p>Un délicieux riz mijoté dans une sauce tomate parfumée aux oignons, épices et légumes, accompagné de viande ou poisson.</p>
+                    </li>
+                    <li>
+                        <img src="images/sand.jpg" alt="Pain + Sandwich" loading="lazy">
+                        <h4>Pain + Sandwich</h4>
+                        <p>Du pain de qualité accompagné de sandwiches pour vos invités.</p>
+                    </li>
+                    <li>
+                        <img src="images/créole.jpg" alt="Riz créole" loading="lazy">
+                        <h4>Riz créole</h4>
+                        <p>Riz nature aux grains légers et séparés, fait maison.</p>
+                    </li>
+                    <li>
+                        <img src="images/blanc.jpg" alt="Riz blanc à la sauce tomate" loading="lazy">
+                        <h4>Riz blanc à la sauce tomate</h4>
+                        <p>Le riz cuit à la perfection pour rester moelleux et léger, accompagné d'une sauce tomate maison.</p>
+                    </li>
+                </ul>
+
+                <h3>Desserts</h3>
+                <ul class="commande-list">
+                    <li>
+                        <img src="images/degue.jpg" alt="Dèguè maison" loading="lazy">
+                        <h4>Dèguè maison</h4>
+                        <p>Une douceur au mil et au yaourt, préparée avec soin.</p>
+                    </li>
+                    <li>
+                        <img src="images/yaourt.jpg" alt="Yaourt spécial" loading="lazy">
+                        <h4>Yaourt Spécial</h4>
+                        <p>Le yaourt unique de chez Bichou Délices.</p>
+                    </li>
+                </ul>
+            </section>
+            <section id="galerie" class="galerie">
+                <h2>Galerie</h2>
                 <p>
-                    Bichou Délices vous propose des plats nordistes, l'adresse incontournable pour savourer 
-                    l'authenticité des recettes du Nord. Chaque plat est préparé avec soin pour offrir une expérience
-                    gourmande et inoubliable.
+                    Découvrez en images nos plats et l'ambiance chaleureuse de Bichou Délices.
                 </p>
-                <a href="#menu" class="btn1">Voir le menu</a>
-            </div>
-        </section>
-        <section id="a_propos" class="a_propos">
-            <h2>À propos de Bichou Délices</h2>
-            <p>
-                Chez Bichou, la cuisine est plus qu'un repas : c'est une histoire, un héritage et 
-                une émotion partagée.
-            </p>
-            <p>
-                Originaire du Nord, Bichou met à l'honneur les saveurs authentiques avec une touche
-                de modernité pour plaire à tous les gourmets. Afin de préserver l'authenticité des recettes 
-                nordistes, nous utilisons uniquement des ingrédients frais, naturels et locaux.
-            </p>
-            <p>
-                Chez Bichou Délices, chaque client est invité à vivre une expérience culinaire unique 
-                faite de découvertes et de souvenirs. Avec son équipe et son service de livraison, 
-                la Nordiste vous offre un véritable voyage gustatif au cœur du Nord.
-            </p>
-        </section>
-        <section id="menu" class="menu">
-            <h2>Nos Menus</h2>
-            <ul>
-                <li>
+                <div class="galerie-grid">
                     <div>
-                        <h3>Lundi</h3>
-                        <img src="images/touba1.jpg" alt="Plat traditionnel Toubani">
-                        <h4>Toubani</h4>
-                        <p>
-                            Le Toubani est un plat traditionnel du Nord à base de farine d'haricots, 
-                            préparé et cuit à la vapeur. Moelleux et généreux, il se savoure avec de l'huile, 
-                            des oignons et du piment en poudre. Riche en protéines, fibres et vitamines, 
-                            c'est un plat sain et nourrissant.
-                        </p>
-                      
+                        <img src="images/ata1.jpg" alt="Atassi">
+                        <span>Atassi traditionnel</span>
                     </div>
-                </li>
+                    <div>
+                        <img src="images/wa1.jpg" alt="Wassa Wassa">
+                        <span>Couscous africain</span>
+                    </div>
+                    <div>
+                        <img src="images/ata2.jpg" alt="Atassi">
+                        <span>Atassi maison</span>
+                    </div>
+                    <div>
+                        <img src="images/wa2.jpg" alt="Wassa Wassa">
+                        <span>Couscous du jeudi</span>
+                    </div>
+                    <div>
+                        <img src="images/pil2.jpg" alt="Igname pilé">
+                        <span>Igname pilé</span>
+                    </div>
+                    <div>
+                        <img src="images/bou.jpg" alt="Bouillie de mil">
+                        <span>Bouillie de mil</span>
+                    </div>
+                    <div>
+                        <img src="images/pil1.jpg" alt="Igname pilé">
+                        <span>Igname pilé maison</span>
+                    </div>
+                    <div>
+                        <img src="images/yaourt.jpg" alt="Yaourt spécial">
+                        <span>Yaourt maison</span>
+                    </div>
+                    <div>
+                        <img src="images/gras.jpg" alt="Riz au gras">
+                        <span>Riz au gras</span>
+                    </div>
+                    <div>
+                        <img src="images/degue.jpg" alt="Dèguè maison">
+                        <span>Dèguè maison</span>
+                    </div>
+                    <div>
+                        <img src="images/blanc.jpg" alt="Riz blanc à la sauce tomate">
+                        <span>Riz blanc à la sauce tomate</span>
+                    </div>
+                    <div>
+                        <img src="images/créole.jpg" alt="Riz créole">
+                        <span>Riz créole</span>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="contact">
+                <h2>Contact</h2>
+                <div class="display">
+                    <img src="images/loca.png" alt="Localisation">
+                    <p>Aïbatin, dans la von de la station Bénin Pétro</p>
+                </div>
 
-                <li>
-                    <div>
-                        <h3>Mardi</h3>
-                        <img src="images/wa1.jpg" alt="Plat traditionnel Wassa Wassa">
-                        <h4>Couscous africain (Wassa Wassa)</h4>
-                        <p>
-                            Préparé à base de cossettes d'igname, ce couscous léger et savoureux 
-                            est cuit à la vapeur. Il s'accompagne d'huile de palme, de friture, 
-                            de poisson, d'œuf ou de fromage. Énergétique et appétissant, 
-                            il se consomme aussi bien au petit-déjeuner qu'au déjeuner.
-                        </p>
-                    </div>
-                </li>
+                <div class="display">
+                    <img src="images/what.png" alt="Téléphone WhatsApp">
+                    <p>01 66 86 47 95 / 01 51 00 74 74</p>
+                </div>
 
-                <li>
-                    <div>
-                        <h3>Mercredi</h3>
-                        <img src="images/ata1.jpg" alt="Plat traditionnel Atassi">
-                        <h4>Atassi (Watché)</h4>
-                        <p>
-                            Mélange de riz et d'haricots cuits ensemble, l'Atassi est généralement 
-                            servi avec friture, piment noir, œuf, fromage, poisson ou viande. 
-                            Chez Bichou, il est également proposé avec du spaghetti ou du gari. 
-                            C'est un plat équilibré, nourrissant et polyvalent.
-                        </p>
-                    </div>
-                </li>
-
-                <li>
-                    <div>
-                        <h3>Jeudi</h3>
-                        <img src="images/wa2.jpg" alt="Couscous africain du jeudi">
-                        <h4>Couscous africain</h4>
-                        <p>Un classique du Nord, toujours apprécié et savoureux.</p>
-                    </div>
-                </li>
-
-                <li>
-                    <div>
-                        <h3>Vendredi</h3>
-                        <img src="images/pil1.jpg" alt="Plat d'igname pilé">
-                        <h4>Igname pilé</h4>
-                        <p>
-                            Préparé en pilant de l'igname bouilli jusqu'à obtenir une pâte lisse 
-                            et élastique, l'igname pilé se déguste en boulettes accompagnées 
-                            de sauces variées. Un incontournable du Nord.
-                        </p>
-                    </div>
-                </li>
-
-                <li>
-                    <div>
-                        <h3>Samedi</h3>
-                        <img src="images/wa3.jpg" alt="Couscous africain du samedi">
-                        <h4>Couscous africain</h4>
-                        <p>
-                            Une spécialité toujours au rendez-vous pour clôturer la semaine.
-                        </p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-        <section id="galerie" class="galerie">
-            <h2>Galerie</h2>
-            <p>Découvrez en images nos plats et l'ambiance chaleureuse de Bichou Délices.</p>
-            <div>
-                <img src="images/ata1.jpg" alt="image atassi">
-                <img src="images/wa1.jpg" alt="eimage wassa">
-                <img src="images/ata2.jpg" alt="image atassi">
-                <img src="images/wa2.jpg" alt="image wassa">
-                <img src="images/pil2.jpg" alt="image igname">
-                <img src="images/bou.jpg" alt="imagebouillie">
-                <img src="images/pil1.jpg" alt="image ignma">
-            </div>
-        </section>
-        <section id="contact" class="contact">
-            <h2>Contact</h2>
-            <div class="display">
-                <img src="images/loca.png" alt="Localisation" width="3%">
-                <p>Aïbatin, dans la von de la station Bénin Pétro</p>
-            </div>
-            <div class="display">
-                <img src="images/what.png" alt="Téléphone WhatsApp" width="2%">
-                <p>01 66 86 47 95 / 01 51 00 74 74</p>
-            </div>
-            <div class="display">
-                <img src="images/horloge.png" alt="Horloge" width="2%">
-                <p>Ouvert du lundi au samedi, de 09h à 17h</p>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Bichou Délices - Tous droits réservés</p>
-    </footer>
-<a href="https://wa.me/22966864795" target="_blank" class="whatsapp-float">
-    <img src="images/what.png" alt="WhatsApp" width="30">
-</a>
-<script src="Script.js"></script>
-</body>
+                <div class="display">
+                    <img src="images/horloge.png" alt="Horaires d'ouverture">
+                    <p>Ouvert du lundi au samedi, de 09h à 17h</p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 Bichou Délices - Tous droits réservés</p>
+        </footer>
+        <a href="https://wa.me/22966864795" target="_blank" class="whatsapp-float">
+            <img src="images/what.png" alt="WhatsApp">
+        </a>
+        <script src="script.js"></script>
+    </body>
 </html>

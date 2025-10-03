@@ -16,7 +16,6 @@ body {
     background-color: #fff;
 }
 
-/* ===== Header & Navigation ===== */
 header {
     width: 100%;
     padding: 15px 10%;
@@ -40,7 +39,7 @@ header {
 .nav a {
     text-decoration: none;
     color: #333;
-    font-weight: bolder;
+    font-weight: bold;
     transition: all 0.3s ease;
 }
 
@@ -49,7 +48,7 @@ header {
     border-bottom: 2px solid #e63946;
 }
 
-/* Hamburger menu */
+/* Hamburger */
 .hamburger {
     display: none;
     font-size: 2rem;
@@ -370,7 +369,7 @@ footer {
         display: none;
         position: absolute;
         top: 60px;
-        right: 5%;
+        right: 15%;
         background: #fff;
         flex-direction: column;
         gap: 15px;

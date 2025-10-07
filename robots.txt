@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moha-tech25.github.io/Bichou-Delices/sitemap.xml

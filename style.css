@@ -1,4 +1,4 @@
-/* ===== Reset & Global Styles ===== */
+
 * {
     padding: 0;
     margin: 0;
@@ -14,6 +14,42 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #fff;
+    overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInFromLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes logoSpin {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(5deg) scale(1.05); }
+    50% { transform: rotate(0deg) scale(1.1); }
+    75% { transform: rotate(-5deg) scale(1.05); }
+    100% { transform: rotate(0deg) scale(1); }
 }
 
 header {
@@ -25,9 +61,27 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #fff;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 2px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+header.scrolled {
+    padding: 10px 10%;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.15);
+}
+
+.logo img {
+    transition: transform 0.5s ease;
+    width: 20%;
+    animation: logoSpin 4s ease-in-out infinite;
+}
+
+.logo img:hover {
+    animation: logoSpin 2s ease-in-out infinite;
+    transform: scale(1.1);
 }
 
 .nav {
@@ -40,12 +94,28 @@ header {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    position: relative;
+    padding: 5px 0;
     transition: all 0.3s ease;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #e63946;
+    transition: width 0.3s ease;
 }
 
 .nav a:hover {
     color: #e63946;
-    border-bottom: 2px solid #e63946;
+}
+
+.nav a:hover::after {
+    width: 100%;
 }
 
 /* Hamburger */
@@ -53,13 +123,17 @@ header {
     display: none;
     font-size: 2rem;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
+.hamburger:hover {
+    transform: rotate(90deg);
+    color: #e63946;
+}
 
-/* ===== Section Accueil ===== */
 .accueil {
     min-height: 100vh;
-    background-color: #d3d0d0;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/background.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,27 +141,25 @@ header {
     color: white;
     position: relative;
     padding: 0 10%;
-}
-
-.accueil::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.5);
+    animation: fadeIn 1s ease-out;
 }
 
 .div1 {
-    position: relative;
     max-width: 700px;
+    animation: fadeIn 1.5s ease-out 0.5s both;
 }
 
 .div1 h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    animation: slideInFromLeft 1s ease-out 0.8s both;
 }
 
 .div1 p {
     margin-bottom: 30px;
+    font-size: 1.1rem;
+    animation: slideInFromRight 1s ease-out 1s both;
 }
 
 .btn1 {
@@ -97,38 +169,107 @@ header {
     padding: 12px 30px;
     border-radius: 30px;
     font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+    transition: all 0.4s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out 1.2s both;
+}
+
+.btn1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn1:hover::before {
+    left: 100%;
 }
 
 .btn1:hover {
     background-color: #d62828;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(230, 57, 70, 0.6);
 }
 
-/* ===== À propos ===== */
 .a_propos {
     padding: 60px 10%;
     text-align: center;
     background: #f8f9fa;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.a_propos.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .a_propos h2 {
     margin-bottom: 20px;
     font-size: 2rem;
     color: #e63946;
+    position: relative;
+    display: inline-block;
 }
 
-/* ===== Menu ===== */
+.a_propos h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #e63946;
+    bottom: -10px;
+    left: 25%;
+    border-radius: 2px;
+}
+
+.a_propos p {
+    margin-bottom: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .menu {
     padding: 60px 10%;
     background: #fff;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.menu.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .menu h2 {
     text-align: center;
     margin-bottom: 40px;
     color: #e63946;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #e63946;
+    bottom: -10px;
+    left: 25%;
+    border-radius: 2px;
 }
 
 .menu ul {
@@ -142,7 +283,14 @@ header {
     background: #f8f9fa;
     border-radius: 10px;
     padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.menu li.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .menu li div {
@@ -153,16 +301,39 @@ header {
 
 .menu li:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
 .menu img {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
+    transition: transform 0.5s ease;
 }
 
-/* ===== Produits & Desserts ===== */
+.menu li:hover img {
+    transform: scale(1.05);
+}
+
+.menu h3 {
+    color: #e63946;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.menu h4 {
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+
+.menu strong {
+    color: #e63946;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    display: block;
+}
+
+
 .produits-list, .commande-list {
     list-style: none;
     display: grid;
@@ -171,62 +342,139 @@ header {
     padding: 0;
     margin-top: 20px;
 }
-#produits h2{
+
+#produits {
+    padding: 60px 10%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+#produits.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#produits h2 {
     text-align: center;
     margin-bottom: 40px;
     color: #e63946;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
 }
-#produits {
-    padding: 60px 10%;
+
+#produits h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #e63946;
+    bottom: -10px;
+    left: 25%;
+    border-radius: 2px;
 }
+
 .produits-list li, .commande-list li {
     background: #f8f9fa;
     border-radius: 10px;
     padding: 15px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.produits-list li.visible, .commande-list li.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .produits-list li:hover, .commande-list li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-/* Images Produits & Desserts réduites */
+
 .produits-list img,
 .commande-list img {
     width: 70%;      
     margin: 0 auto 10px auto;  
     display: block;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: all 0.5s ease;
+    border-radius: 8px;
 }
 
 .produits-list img:hover,
 .commande-list img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    border-radius: 12px;
+    transform: scale(1.08);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
 }
- #mets-sur-commande{
+
+#mets-sur-commande {
     padding: 60px 10%;
     text-align: center;
-    background:  #fff;
+    background: #fff;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
 }
-#mets-sur-commande h2,h3{
+
+#mets-sur-commande.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#mets-sur-commande h2, #mets-sur-commande h3 {
     text-align: center;
     margin-bottom: 40px;
     color: #e63946;
+    position: relative;
+    display: inline-block;
 }
-/* ===== Galerie ===== */
+
+#mets-sur-commande h2::after, #mets-sur-commande h3::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #e63946;
+    bottom: -10px;
+    left: 25%;
+    border-radius: 2px;
+}
+
 .galerie {
     padding: 60px 10%;
     text-align: center;
     background: #f1f1f1;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.galerie.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .galerie h2 {
     margin-bottom: 20px;
     color: #e63946;
+    position: relative;
+    display: inline-block;
+}
+
+.galerie h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #e63946;
+    bottom: -10px;
+    left: 25%;
+    border-radius: 2px;
 }
 
 .galerie-grid {
@@ -241,6 +489,14 @@ header {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s ease;
+}
+
+.galerie-grid div.visible {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .galerie-grid div img {
@@ -248,12 +504,11 @@ header {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: all 0.5s ease;
 }
 
 .galerie-grid div:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: scale(1.1);
 }
 
 .galerie-grid div span {
@@ -261,60 +516,97 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.7);
     color: #fff;
     text-align: center;
-    padding: 5px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    padding: 8px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
 }
 
 .galerie-grid div:hover span {
-    opacity: 1;
-} 
-/* ===== Contact Section ===== */
+    transform: translateY(0);
+}
+
 .contact {
     padding: 60px 10%;
     background: #fff;
     text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.contact.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .contact h2 {
     margin-bottom: 30px;
     color: #e63946;
+    position: relative;
+    display: inline-block;
 }
 
-/* Conteneur des éléments contact */
+.contact h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #e63946;
+    bottom: -10px;
+    left: 25%;
+    border-radius: 2px;
+}
+
 .contact .display {
-    display: grid;                 /* passer de flex à grid */
-    grid-template-columns: auto 1fr; /* 2 colonnes : icône + texte */
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
     gap: 15px;
     margin: 15px auto;
+    max-width: 400px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease;
 }
 
-/* Icônes contact */
+.contact .display.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
 .contact .display img {
-    width: 40px;      /* taille réduite mais visible */
+    width: 40px;
     height: 40px;
+    transition: transform 0.3s ease;
 }
 
-/* Texte contact */
+.contact .display:hover img {
+    transform: scale(1.2);
+}
+
+
 .contact .display p {
     margin: 0;
     text-align: left;
 }
 
-/* ===== Footer ===== */
 footer {
     background: #333;
     color: white;
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
-/* ===== WhatsApp Flottant ===== */
+footer:hover {
+    background: #222;
+}
+
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -328,14 +620,23 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    animation: float 2s ease-in-out infinite;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
+    animation: float 1s ease-in-out infinite;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
 }
 
-/* ===== Responsive ===== */
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+
 @media (max-width: 1024px) {
     .menu ul {
         grid-template-columns: repeat(2, 1fr);
@@ -345,6 +646,7 @@ footer {
         grid-auto-rows: 180px;
     }
 }
+
 @media (max-width: 768px) {
     header {
         padding: 15px 5%;
@@ -357,8 +659,8 @@ footer {
 
     .nav {
         display: none;
-        position: absolute; /* Reste en absolute */
-        top: 70px; /* Juste en dessous du header */
+        position: absolute;
+        top: 70px;
         right: 5%;
         background: #fff;
         flex-direction: column;
@@ -367,11 +669,16 @@ footer {
         box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
         border-radius: 10px;
         z-index: 999;
-        width: 200px; /* Largeur fixe */
+        width: 200px;
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: all 0.4s ease;
     }
 
     .nav.active {
         display: flex;
+        transform: translateY(0);
+        opacity: 1;
     }
 
     .nav a {
@@ -390,7 +697,6 @@ footer {
         transform: translateX(5px);
     }
 
-    /* Le reste de votre CSS responsive existant */
     .menu ul {
         grid-template-columns: 1fr;
     }

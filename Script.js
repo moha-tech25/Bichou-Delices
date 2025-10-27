@@ -1,3 +1,17 @@
+// Vérification des balises meta
+console.log('=== VÉRIFICATION SEO ===');
+const metaDescription = document.querySelector('meta[name="description"]');
+const title = document.querySelector('title');
+
+console.log('Title:', title ? title.textContent : 'Non trouvé');
+console.log('Meta Description:', metaDescription ? metaDescription.getAttribute('content') : 'Non trouvé');
+
+// Vérification de l'indexation
+if (metaDescription) {
+    console.log('✅ Meta description présente');
+} else {
+    console.log('❌ Meta description manquante');
+}
 
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('.nav');
@@ -7,20 +21,17 @@ hamburger.addEventListener('click', () => {
     nav.classList.toggle('active');
 });
 
-
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         nav.classList.remove('active');
     });
 });
 
-
 document.addEventListener('click', (e) => {
     if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
         nav.classList.remove('active');
     }
 });
-
 
 const observerOptions = {
     threshold: 0.1,
@@ -32,7 +43,6 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             
-
             if (entry.target.classList.contains('menu')) {
                 const menuItems = entry.target.querySelectorAll('li');
                 menuItems.forEach((item, index) => {
@@ -85,7 +95,6 @@ const sectionsToObserve = document.querySelectorAll('.a_propos, .menu, #produits
 sectionsToObserve.forEach(section => {
     observer.observe(section);
 });
-
 
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');

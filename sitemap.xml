@@ -1,36 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Page d'accueil -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://moha-tech25.github.io/Bichou-Delices/</loc>
-    <lastmod>2025-10-07</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-03-20</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Page À propos -->
-  <url>
-    <loc>https://moha-tech25.github.io/Bichou-Delices/about.html</loc>
-    <lastmod>2025-10-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Page Contact -->
-  <url>
-    <loc>https://moha-tech25.github.io/Bichou-Delices/contact.html</loc>
-    <lastmod>2025-10-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Page Produits (si elle existe) -->
-  <url>
-    <loc>https://moha-tech25.github.io/Bichou-Delices/produits.html</loc>
-    <lastmod>2025-10-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
 </urlset>
